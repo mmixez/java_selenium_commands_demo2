@@ -34,14 +34,22 @@ public class ConditionalMethods {
        // boolean firstNamestatus = driver.findElement(By.xpath("//input[@id='FirstName']")).isEnabled();
 
         //isSelected
-        WebElement male_rd = driver.findElement(By.xpath("//input[@id='gender-male']"));
-        WebElement female_rd = driver.findElement(By.xpath("//input[@id='gender-female']"));
+//        WebElement male_rd = driver.findElement(By.xpath("//input[@id='gender-male']"));
+//        WebElement female_rd = driver.findElement(By.xpath("//input[@id='gender-female']"));
+//
+//        System.out.println("Before selection....");
+//        System.out.println(male_rd.isSelected());
+//        System.out.println(female_rd.isSelected());
+//
+//        System.out.println("After selecting male...");
+//        male_rd.click();
+//        System.out.println(male_rd.isSelected());
+//        System.out.println(female_rd.isSelected());
 
-        System.out.println("Before selection....");
-        System.out.println(male_rd.isSelected());
-        System.out.println(female_rd.isSelected());
 
-        System.out.println();
+        boolean newsletterStatus = driver.findElement(By.xpath("//input[@id='Newsletter']")).isSelected();
+        System.out.println("News letter checkbox status: " + newsletterStatus);
+
 
     }
 
