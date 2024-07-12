@@ -19,7 +19,7 @@ public class ExplicitWaitDemo {
 
         WebDriver driver = new ChromeDriver();
 
-        WebDriverWait mywait = new WebDriverWait(driver,Duration.ofSeconds(5)); //declaration
+        WebDriverWait mywait = new WebDriverWait(driver,Duration.ofSeconds(10)); //declaration
 
         // get (url) - opens the url on the browser
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
@@ -36,7 +36,7 @@ public class ExplicitWaitDemo {
 
 
 
-        WebElement loginbtn = mywait.until(ExpectedConditions.elementToBeClickable(By.xpath("button[normalize-space()='Login']")));
+        WebElement loginbtn = mywait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Login']")));
         loginbtn.click();
 
 

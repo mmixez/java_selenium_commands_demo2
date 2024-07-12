@@ -20,20 +20,23 @@ public class FluentWaitDemo {
         WebDriver driver = new ChromeDriver();
 
         Wait<WebDriver> mywait = new FluentWait<WebDriver>(driver)
-                .withTimeout(Duration.ofSeconds(30))
+                .withTimeout(Duration.ofSeconds(20))
                 .pollingEvery(Duration.ofSeconds(5))
                 .ignoring(NoSuchElementException.class);
 
 
 
         // get (url) - opens the url on the browser
-       // driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
         WebElement txtUserName = mywait.until(new Function<WebDriver, WebElement>(){
             public WebElement apply(WebDriver driver) {
-                return driver.findElement(By.id("//input[@placeholder='Username']"));
+                return driver.findElement(By.xpath("//input[@placeholder='Username']"));
             }
         }) ;
+        txtUserName.sendKeys("Admin");
+
+
 
     }
 }
