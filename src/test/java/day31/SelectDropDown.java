@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
+import java.util.List;
 
 public class SelectDropDown {
     public static void main(String[] args) {
@@ -26,6 +27,19 @@ public class SelectDropDown {
 
       //  drpCountry.selectByValue("france");
 
-       drpCountry.selectByIndex(2);
+      // drpCountry.selectByIndex(2);
+
+        //capture the options from the dropdown
+
+        List<WebElement> options = drpCountry.getOptions();
+        System.out.println(options.size());
+
+//        for (int i = 0; i <options.size();i++) {
+//            System.out.println( options.get(i).getText());
+//        }
+//
+        for (WebElement op: options) {
+            System.out.println(op.getText());
+        }
     }
 }
